@@ -1,0 +1,18 @@
+<%= simple_form_for(@posting, local: true) do |f| %>
+  <% if posting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(posting.errors.count, "error") %> prohibited this posting from being saved:</h2>
+
+      <ul>
+      <% posting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.input :category_id, collection: @categories %>
+  <%= f.button :submit %>
+<% end %>
