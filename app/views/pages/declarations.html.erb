@@ -2,7 +2,6 @@
   <tbody>
       <thead>
     <tr>
-    
       <th scope="col">Title</th>
       <th scope="col">Company</th>
       <th scope="col">Posted on:</th>
@@ -16,7 +15,6 @@
   </thead>
     <% @postings.each do |posting| %>
       <tr>
-        
         <td><%= posting.title %></td>
         <td><%= posting.user.company %></td>
         <td><%= @categories.find(posting.category_id).title %></td>
